@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { PersonalDetails } from '../home/personal-details/personal-details.model';
 
@@ -7,19 +9,17 @@ import { PersonalDetails } from '../home/personal-details/personal-details.model
 })
 export class PaymentService {
   //No real Database to Add new Cards, So there's isn't a fully persistent Storage
+  serverUrl = "http://localhost:3000/details"
   private id = 1
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   createPersonalDetails(card) {
-    // Simulate Http Post request Obseverbles
-    const newCard = {...card, id: this.id}
-    this.id++
     //Simulate successful HttpRequest
-   return of(newCard)
+   return this.http.post<PersonalDetails>(this.serverUrl, card)
   }
   getPersonalDetails() {
-    const newCard = [{firstName: "Ola", lastName: "Joshua", email: "ola@gmail.com", monthlyAdsBudget: 1, phone:123 }]
+
     //Simulate successful HttpRequest
-   return of(newCard)
+    return this.http.get<PersonalDetails[]>(this.serverUrl);
   }
 }

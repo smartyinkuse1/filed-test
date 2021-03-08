@@ -9,12 +9,14 @@ import { map, mergeMap, catchError } from 'rxjs/operators';
 import { PaymentService } from '../../../services/payment.service'
 import * as personalDetailsActions from './personal-detail.action';
 import { PersonalDetails } from '../personal-details.model'
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class PersonalDetailsEffect {
   constructor(
     private actions$: Actions,
-    private paymentService: PaymentService
+    private paymentService: PaymentService,
+    private toastr: ToastrService
   ) {}
   @Effect()
   loadPersonalDetails$: Observable<Action> = this.actions$.pipe(
@@ -42,7 +44,8 @@ export class PersonalDetailsEffect {
       this.paymentService.createPersonalDetails(details).pipe(
         map(
           (newPersonalDetails: PersonalDetails) =>
-            new personalDetailsActions.CreatePersonalDetailsSuccess(newPersonalDetails)
+            new personalDetailsActions.CreatePersonalDetailsSuccess(newPersonalDetails),
+            this.toastr.success("Details sent Succesfully")
         ),
         catchError(err => of(new personalDetailsActions.CreatePersonalDetailsFail(err)))
       )

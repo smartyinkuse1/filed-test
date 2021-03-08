@@ -1,1 +1,39 @@
-<p>personal-details works!</p>
+<div *ngIf="status" class="card right-card">
+  <p class="text-center mt-5 well">We’ll be in touch to get your trial set up.</p>
+  <p class="text-center fill">
+    Fill Out Form
+  </p>
+  <div class="container right-container px-5">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col-6">
+          <input type="text" formControlName="firstName" placeholder="First Name *" class="form-control" id="inputEmail4">
+        </div>
+        <div class="form-group col-6">
+          <input type="text" formControlName="lastName" placeholder="Last Name *" class="form-control" id="inputPassword4">
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="email" formControlName="email" class="form-control" id="inputAddress" placeholder="Work Email *">
+      </div>
+      <div class="form-group">
+        <input type="tel" formControlName="monthlyAdsBudget" class="form-control" id="inputAddress2" placeholder="Monthly Advertising Budget *">
+      </div>
+      <div class="row no-gutters">
+        <div class="form-group col-6">
+          <select id="inputState" class="form-control country-select">
+            <option selected>Romania (Roman)</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="form-group col-6">
+          <input type="tel" formControlName="phone" class="form-control country-input" placeholder="+40" id="inputCity">
+        </div>
+      </div>
+      <div class="form-group button-div">
+        <button type="submit" class="filed-button w-100">GET FREE TRIAL</button>
+        <a *ngIf="completeAdd" routerLink="/">Go to App Component</a>
+      </div>
+    </form>
+  </div>
+</div>

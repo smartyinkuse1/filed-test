@@ -19,7 +19,7 @@ import { EffectsModule } from '@ngrx/effects';
     CommonModule,
     HomeRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forFeature("cards", personalDetailsReducer),
+    StoreModule.forFeature("personalDetails", personalDetailsReducer),
     EffectsModule.forFeature([PersonalDetailsEffect])
   ]
 })

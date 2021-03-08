@@ -1,1 +1,123 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+:root {
+--unnamed-color-ff6e4e: #FF6E4E;
+--unnamed-color-38ccf5: #38CCF5;
+--unnamed-color-000000: #000000;
+--unnamed-color-ffffff: #FFFFFF;
+--unnamed-color-fbfbfb: #FBFBFB;
+--unnamed-color-dedede: #DEDEDE;
+--unnamed-color-707070: #707070;
+--unnamed-color-008cc9: #008CC9;
+--unnamed-color-38ccf51c: #38CCF5;
+--unnamed-color-0052ef: #0052EF;
+--unnamed-color-e4e4e4: #E4E4E4;
+--unnamed-color-0037ff80: #0037FF;
+--unnamed-color-00509d: #00509D;
+--unnamed-color-006cc9: #006CC9;
+
+/* Font/text values */
+--unnamed-font-family-roboto: Roboto;
+--unnamed-font-style-normal: normal;
+--unnamed-font-weight-normal: normal;
+--unnamed-font-size-14: 14px;
+--unnamed-font-size-16: 16px;
+--unnamed-font-size-18: 18px;
+--unnamed-font-size-25: 25px;
+--unnamed-font-size-28: 28px;
+--unnamed-font-size-34: 34px;
+--unnamed-font-size-45: 45px;
+--unnamed-font-size-54: 54px;
+--unnamed-character-spacing-0: 0px;
+--unnamed-line-spacing-17: 17px;
+--unnamed-line-spacing-19: 19px;
+--unnamed-line-spacing-22: 22px;
+--unnamed-line-spacing-30: 30px;
+--unnamed-line-spacing-34: 34px;
+--unnamed-line-spacing-41: 41px;
+--unnamed-line-spacing-54: 54px;
+--unnamed-line-spacing-65: 65px;
+}
+
+/* Character Styles */
+.roboto-—-14pt-body-3 {
+font-family: var(--unnamed-font-family-roboto);
+font-style: var(--unnamed-font-style-normal);
+font-weight: var(--unnamed-font-weight-normal);
+font-size: var(--unnamed-font-size-14);
+line-height: var(--unnamed-line-spacing-17);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+}
+.roboto-—-16pt-body-2 {
+font-family: var(--unnamed-font-family-roboto);
+font-style: var(--unnamed-font-style-normal);
+font-weight: var(--unnamed-font-weight-normal);
+font-size: var(--unnamed-font-size-16);
+line-height: var(--unnamed-line-spacing-19);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+}
+.roboto-—-18pt-body-text {
+font-family: var(--unnamed-font-family-roboto);
+font-style: var(--unnamed-font-style-normal);
+font-weight: var(--unnamed-font-weight-normal);
+font-size: var(--unnamed-font-size-18);
+line-height: var(--unnamed-line-spacing-22);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+}
+.roboto-—-25pt-mobile {
+font-family: var(--unnamed-font-family-roboto);
+font-style: var(--unnamed-font-style-normal);
+font-weight: var(--unnamed-font-weight-normal);
+font-size: var(--unnamed-font-size-25);
+line-height: var(--unnamed-line-spacing-30);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+}
+.roboto-—-28pt-h4 {
+font-family: var(--unnamed-font-family-roboto);
+font-style: var(--unnamed-font-style-normal);
+font-weight: var(--unnamed-font-weight-normal);
+font-size: var(--unnamed-font-size-28);
+line-height: var(--unnamed-line-spacing-34);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+}
+.roboto-—-34pt-h3 {
+font-family: var(--unnamed-font-family-roboto);
+font-style: var(--unnamed-font-style-normal);
+font-weight: var(--unnamed-font-weight-normal);
+font-size: var(--unnamed-font-size-34);
+line-height: var(--unnamed-line-spacing-41);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+}
+.roboto-—-45pt-h2 {
+font-family: var(--unnamed-font-family-roboto);
+font-style: var(--unnamed-font-style-normal);
+font-weight: var(--unnamed-font-weight-normal);
+font-size: var(--unnamed-font-size-45);
+line-height: var(--unnamed-line-spacing-54);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+}
+.roboto-—-54pt-h1 {
+font-family: var(--unnamed-font-family-roboto);
+font-style: var(--unnamed-font-style-normal);
+font-weight: var(--unnamed-font-weight-normal);
+font-size: var(--unnamed-font-size-54);
+line-height: var(--unnamed-line-spacing-65);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+}
+.filed-button {
+  background: transparent linear-gradient(180deg, var(--unnamed-color-ff6e4e) 0%, var(--unnamed-color-ff6e4e) 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #FF6E4E 0%, #FF6E4E 100%) 0% 0% no-repeat padding-box;
+  box-shadow: 0px 4px 8px #00000029;
+  color: var(--unnamed-color-ffffff);
+  border-radius: 5px;
+  padding: 5px 0;
+  border: 0;
+}

@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { PersonalDetails } from './personal-details.model'
+import { PersonalDetails } from './personal-details.model';
+import { Store } from "@ngrx/store";
+import * as fromPersonalDetail from "./state/personal-details.reducer";
+import * as  CardActions from './state/personal-detail.action';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-personal-details',
@@ -13,8 +17,8 @@ export class PersonalDetailsComponent implements OnInit {
   submit: boolean = false;
   completeAdd: boolean = false
   details$: Observable<PersonalDetails[]>
-
-  constructor() { }
+  @Input() status;
+  constructor(private toastr: ToastrService, private store: Store<fromPersonalDetail.AppState>) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -32,31 +36,33 @@ export class PersonalDetailsComponent implements OnInit {
       }),
       monthlyAdsBudget: new FormControl(null, {
         updateOn: 'change',
-        validators: [Validators.required,]
+        validators: [Validators.required, Validators.pattern("[0-9]+")]
       }),
       phone: new FormControl(null, {
         updateOn: 'change',
-        validators: [Validators.required,]
+        validators: [Validators.required, Validators.pattern("[0-9]+")]
       })
     })
   }
   onSubmit() {
     this.submit = true
     let currentDate = new Date().getFullYear()
+    console.log(this.form);
+
     if (!this.form.valid) {
-      return
+      return this.toastr.error("Some Invalid fields")
     }
     const persnoalDetails: PersonalDetails = {
       firstName: this.form.value.firstName,
       lastName: this.form.value.lastName,
       email: this.form.value.email,
-      monthlyAdsBudget: this.form.value.monthlyAdsBudget,
-      phone: this.form.value.phone
+      monthlyAdsBudget: +this.form.value.monthlyAdsBudget,
+      phone: +this.form.value.phone
     }
-    // this.store.dispatch(new CardActions.CreateCard(cardValue));
-    // this.form.reset()
-    // this.submit = false
-    // this.completeAdd = true
+    this.store.dispatch(new CardActions.CreatePersonalDetails(persnoalDetails));
+    this.form.reset()
+    this.submit = false
+    this.completeAdd = true
   }
 
 }

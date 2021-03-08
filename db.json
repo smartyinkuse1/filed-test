@@ -1,0 +1,12 @@
+{
+  "details": [
+    {
+      "firstName": "Default",
+      "lastName": "User",
+      "email": "default@mail.com",
+      "monthlyAdsBudget": 5,
+      "phone": 123,
+      "id": 1
+    }
+  ]
+}
